@@ -1,0 +1,30 @@
+{
+  "name": "smartedu",
+  "version": "1.0.0",
+  "description": "Education Portal",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rythwael/SmartEdu.git"
+  },
+  "keywords": [
+    "education",
+    "portal",
+    "node.js"
+  ],
+  "author": "Oğuzhan Akça",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rythwael/SmartEdu/issues"
+  },
+  "homepage": "https://github.com/Rythwael/SmartEdu#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
