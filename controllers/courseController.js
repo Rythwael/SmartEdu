@@ -20,9 +20,9 @@ exports.createCourse = async (req, res) => {
 exports.getAllCourses = async (req, res) => {
   try {
     const courses = await Course.find();
-    res.status(200).json({
-      status: "success",
+    res.status(200).render('courses', {
       courses,
+      page_name: 'courses',
     });
   } catch (error) {
     res.status(400).json({
