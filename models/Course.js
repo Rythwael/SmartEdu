@@ -5,17 +5,17 @@ const CourseSchema = new Schema({
     name: { 
         type: String, // Gonna be string.
         unique: true, // Gonna be unique(Courses can't have same name)
-        required: true // Can't be empty.
+        required: true, // Can't be empty.
     },
     description: { 
         type: String, // Gonna be string.
         required: true, // Can't be empty.
-        trim: true // Delete spaces at the beginning and end.
+        trim: true, // Delete spaces at the beginning and end.
     },
     createdAt: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
 })
 
 const Course = mongoose.model('Course', CourseSchema); // Course model created.

@@ -14,10 +14,12 @@ app.set("view engine", "ejs"); //View engine setted as "ejs" module.
 
 //Middlewares
 app.use(express.static("public"));
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 //Routing
 app.use("/", pageRoute);
-app.use("/courses", pageRoute);
+app.use("/courses", courseRoute);
 
 //Port
 const port = 3000;
