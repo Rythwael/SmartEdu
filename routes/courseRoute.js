@@ -3,7 +3,9 @@ const courseController = require('../controllers/courseController');
 
 const router = express.Router();
 
-router.route('/').post(courseController.createCourse); // http://localhost:3000/courses
-router.route('/').get(courseController.getAllCourses); // http://localhost:3000/courses
+router.route('/').post(courseController.createCourse);
+router.route('/').get(courseController.getAllCourses);
+router.route('/:id').get(courseController.getCourse);
+
 
 module.exports = router;
