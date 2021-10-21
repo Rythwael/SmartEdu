@@ -18,10 +18,10 @@ const UserSchema = new Schema({
     },
 });
 
-UserSchema.pre('save', function (next){
+UserSchema.pre('save', function (next){ //before creating in database
     const user = this;
     bcrypt.hash(user.password, 10, (error,hash) => {
-        user.password = hash;
+        user.password = hash; //encrypt the password.
         next();
     })
 })
