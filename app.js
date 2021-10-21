@@ -4,6 +4,8 @@ const mongoose = require('mongoose'); // mongoose module added.
 const pageRoute = require('./routes/pageRoute'); //pageRoute router added.
 const courseRoute = require('./routes/courseRoute'); //courseRoute router added.
 const categoryRoute = require('./routes/categoryRoute'); //categoryRoute router added.
+const userRoute = require('./routes/userRoute'); //categoryRoute router added.
+
 
 
 const app = express(); // express func started.
@@ -23,6 +25,8 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 app.use("/", pageRoute);
 app.use("/courses", courseRoute);
 app.use("/categories", categoryRoute);
+app.use("/users", userRoute);
+
 
 
 //Port

@@ -1,6 +1,6 @@
 const Category = require("../models/Category");
 
-//Creating course
+//Creating category
 exports.createCategory = async (req, res) => {
   try {
     const category = await Category.create(req.body);
@@ -16,7 +16,7 @@ exports.createCategory = async (req, res) => {
   }
 };
 
-//Course List
+//category List
 exports.getAllCategories = async (req, res) => {
   try {
     const categories = await Category.find();
