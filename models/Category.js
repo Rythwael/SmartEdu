@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const CategorySchema = new Schema({
     name: { 
         type: String, // Gonna be string.
-        unique: true, // Gonna be unique(Courses can't have same name)
+        unique: true, // Gonna be unique
         required: true, // Can't be empty.
     },
     slug: {
