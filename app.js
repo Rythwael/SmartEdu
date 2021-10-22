@@ -1,6 +1,7 @@
 const express = require('express'); // express module added.
 const mongoose = require('mongoose'); // mongoose module added.
 const session = require('express-session'); // session module added.
+const MongoStore = require('connect-mongo'); // Connect-mongo module added.
 
 const pageRoute = require('./routes/pageRoute'); //pageRoute router added.
 const courseRoute = require('./routes/courseRoute'); //courseRoute router added.
@@ -27,6 +28,7 @@ app.use(session({
   secret: 'my_keyboard_cat',
   resave:false,
   saveUninitialized:true,
+  store: MongoStore.create( { mongoUrl: 'mongodb://localhost/smartedu-db' } )
 }))
 
 //Routing
