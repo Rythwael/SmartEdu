@@ -46,4 +46,11 @@ exports.logOutUser = (req,res) => {
   req.session.destroy(() => {
     res.redirect('/');
   })
-}
+};
+
+// Dashboard Page
+exports.getDashboardPage = (req, res) => {
+  res.status(200).render("dashboard", {
+    page_name: "dashboard",
+  });
+};
