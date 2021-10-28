@@ -7,6 +7,8 @@ const router = express.Router();
 router.route('/').post(roleMiddleware(["Teacher", "Admin"]), courseController.createCourse); //if youre teacher or admin, u can create course
 router.route('/').get(courseController.getAllCourses);
 router.route('/:slug').get(courseController.getCourse);
+router.route('/enroll').post(courseController.enrollCourse);
+
 
 
 module.exports = router;
