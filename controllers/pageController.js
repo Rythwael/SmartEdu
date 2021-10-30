@@ -47,8 +47,8 @@ exports.sendEmail = async (req, res) => {
     port: 465,
     secure: true, // true for 465, false for other ports
     auth: {
-      user: "gylphael@gmail.com", // gmail account
-      pass: "kngtofjiqxnetqjt", // gmail pass
+      user: "gylphael@gmail.com", // mail 
+      pass: "kngtofjiqxnetqjt", // mail pass
     },
   });
 
