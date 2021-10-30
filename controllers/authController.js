@@ -25,10 +25,17 @@ exports.loginUser = (req, res) => {
     User.findOne({email}, (err,user) => { //if req.email = database's email, it will callback user
       if(user){ //if user exists
         bcrypt.compare(password, user.password, (err,same) => { //compare req.password and encrypted password
-            // USER SESSION
+          if (same) {
             req.session.userID = user._id;
             res.status(200).redirect('/users/dashboard');
+          } else {
+            req.flash("error", `Your Password Is Wrong!`);
+            res.status(400).redirect('/login')
+          }
         })
+      } else {
+        req.flash("error", `User Is Not Exist!`);
+        res.status(400).redirect('/login');
       }
     })
   } catch (error) {
