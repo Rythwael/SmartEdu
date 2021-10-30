@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt'); // mongoose module added.
 const User = require("../models/User");
 const Category = require("../models/Category");
 const Course = require("../models/Course");
+const { validationResult } = require('express-validator');
 
 //Creating user
 exports.createUser = async (req, res) => {
@@ -9,10 +10,11 @@ exports.createUser = async (req, res) => {
     const user = await User.create(req.body);
     res.status(201).redirect('/login');
   } catch (error) {
-    res.status(400).json({
-      status: "fail",
-      error,
-    });
+    const errors = validationResult(req);
+    for (let i=0; i < errors.array().length; i++) {
+      req.flash("error", `${errors.array()[i].msg}`);
+    }
+    res.status(400).redirect('/register');
   }
 };
 
