@@ -23,11 +23,9 @@ exports.loginUser = (req, res) => {
     User.findOne({email}, (err,user) => { //if req.email = database's email, it will callback user
       if(user){ //if user exists
         bcrypt.compare(password, user.password, (err,same) => { //compare req.password and encrypted password
-          if(same){ //if passwords are same
             // USER SESSION
             req.session.userID = user._id;
             res.status(200).redirect('/users/dashboard');
-          }
         })
       }
     })
